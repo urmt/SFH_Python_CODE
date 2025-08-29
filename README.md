@@ -1,68 +1,101 @@
-# SFH Simulation: Fundamental Constants and Cosmic Coherence
+# SFH Python Framework
 
-## Overview
+**Research Code for *The Sentience-Field Hypothesis: Consciousness as the Fabric of Reality***  
 
-This repository contains the Python script `sfh_simulation_v6-Enhanced-Combo.py`, a comprehensive simulation for exploring the impact of fundamental physical constants on the "Coherence" and "Fertility" of a hypothetical universe. The model explores a multi-dimensional parameter space to identify optimal configurations and assess the uniqueness of our own universe's constants.
+This repository contains the official Python framework that supports the scientific work in the book *The Sentience-Field Hypothesis (SFH)*.  
+It provides reproducible mathematical experiments, statistical analyses, and visualizations that correspond to the results, models, and figures presented in the manuscript.  
 
-This is a single-file program that runs the entire simulation, generates data files, and produces key plots for analysis.
+The framework is designed to meet academic reproducibility standards (e.g., for arXiv submission) while remaining accessible to developers and researchers who want to explore, extend, or critique the SFH model.
 
-## Key Concepts
+---
 
-* **Coherence:** A measure of a universe's internal consistency and stability, particularly with respect to atomic structure and gravitational behavior.
-* **Fertility:** A measure of a universe's capacity to form complex structures and elements necessary for life, specifically focusing on stellar nucleosynthesis.
-* **Pareto Frontier:** The set of optimal trade-offs between Coherence and Fertility, representing the best possible outcomes where no single score can be improved without sacrificing the other.
-* **Partial Rank Correlation Coefficient (PRCC):** A statistical method used to determine the sensitivity of the model outputs (Coherence and Fertility) to each input parameter (the fundamental constants).
+## ✨ Overview
 
-## Files
+The Sentience-Field Hypothesis proposes that consciousness emerges as a fundamental property of reality, encoded in quantized field structures.  
+This framework provides the computational backbone for that hypothesis, including:
 
-* `sfh_simulation_v6-Enhanced-Combo.py`: The main simulation script. This file is a self-contained program that executes the entire workflow.
-* `samples_v6.csv`: A CSV file containing the raw output of the Monte Carlo simulation. Each row represents a single random sample of the fundamental constants and the resulting Coherence and Fertility scores.
-* `pareto_v6.csv`: A CSV file containing the data points that form the Pareto frontier. These are the most optimal samples from the simulation.
-* `weight_sweep_v6.csv`: A CSV file containing the results of the weight sweep analysis, which determines the optimal combined score for various weightings of Coherence and Fertility.
+- **Partition mathematics** (Hardy–Ramanujan formula, Euler identities, pentagonal theorem checks).  
+- **Stochastic & statistical analyses** (Monte Carlo experiments, coherence–fertility optimization, forbidden configuration detection).  
+- **Advanced visualization** (plots of distributions, phase transitions, partition growth).  
 
-## How to Run
+By running the included scripts, researchers can **reproduce the figures and tables** in the SFH book and extend the analysis with their own data.  
 
-### Prerequisites
+---
 
-You need Python 3 and the following libraries installed:
+## 🧮 Research Framework
 
-* `numpy`
-* `pandas`
-* `matplotlib`
-* `scipy`
+Run `setup_config.py` once to generate a structured research environment:  
 
-You can install them using pip:
-
-```bash
-pip install numpy pandas matplotlib scipy
+```
+config/               → JSON parameter sets for experiments  
+results/              → Numerical outputs from runs  
+plots/                → Generated visualizations (PNG, PDF)  
+logs/                 → Metadata logs (timestamps, seeds, environment info)  
 ```
 
-### Execution
+It also auto-generates reusable Python modules:  
 
-Simply run the Python script from your terminal:
+- `parameters.py` → imports JSON configs into experiments  
+- `random_seeds.py` → ensures reproducibility across runs  
+- `environment.py` → documents environment + dependencies  
 
+This structure guarantees that **all results are reproducible** and can be replicated by others.  
+
+---
+
+## 🚀 Usage Guide
+
+### 1. Clone the repo
 ```bash
-python sfh_simulation_v6-Enhanced-Combo.py
+git clone https://github.com/urmt/SFH_Python_CODE.git
+cd SFH_Python_CODE
 ```
 
-The script will automatically perform the following actions:
+### 2. Setup experiment configs
+```bash
+python setup_config.py
+```
 
-1.  Run the Monte Carlo simulation to generate `N` samples.
-2.  Calculate the Coherence and Fertility scores for each sample.
-3.  Identify the Pareto frontier.
-4.  Perform a weight sweep analysis.
-5.  Generate and save the `samples_v6.csv`, `pareto_v6.csv`, and `weight_sweep_v6.csv` data files.
-6.  Generate and save three plots (`sfh_plots_v6_histograms.png`, `sfh_plots_v6_2d_hist.png`, `weight_sweep_v6.png`) in the same directory.
-7.  Generate a JSON report (`sfh_report_v6.json`) summarizing the statistical tests, PRCC values, and universe scores.
+### 3. Run the framework
+```bash
+python sfh_master_framework.py
+```
 
-## Outputs
+### 4. Inspect results
+- Numerical results → `results/`  
+- Visualizations → `plots/`  
+- Run logs → `logs/`  
 
-After running the script, your directory will contain the following new files:
+---
 
-* `samples_v6.csv`
-* `pareto_v6.csv`
-* `weight_sweep_v6.csv`
-* `sfh_plots_v6_histograms.png`: Histograms showing the distribution of Coherence and Fertility scores.
-* `sfh_plots_v6_2d_hist.png`: A 2D histogram visualizing the relationship between Coherence and Fertility, with the Pareto frontier and our universe's position highlighted.
-* `weight_sweep_v6.png`: A plot of the optimal combined score as a function of the weight given to Coherence.
-* `sfh_report_v6.json`: A detailed report in JSON format.
+## 📖 Reproducibility & Results
+
+The figures and analyses in the *SFH book* are generated directly from this framework.  
+Researchers can:  
+
+- Modify `config/*.json` files to change experimental parameters.  
+- Rerun `sfh_master_framework.py` to reproduce existing figures or generate new ones.  
+- Extend the framework with additional statistical or visualization modules.  
+
+---
+
+## 🤝 Contributing
+
+This project is open for collaboration.  
+
+- **Commits & Pull Requests** are welcome.  
+- Researchers are encouraged to fork the repo, run new experiments, and submit improvements.  
+- If you wish to **co-manage the repository**, please open an issue or request access.  
+
+The goal is to make SFH an **open scientific platform** where critical discussion, verification, and refinement are possible.  
+
+---
+
+## 📚 Citation
+
+If you use this framework in academic work, please cite both the book and this repository:  
+
+- Traver, M.R. (2025). *The Sentience-Field Hypothesis: Consciousness as the Fabric of Reality.*  
+- SFH Python Framework (2025). GitHub repository: https://github.com/urmt/SFH_Python_CODE  
+
+---
