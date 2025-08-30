@@ -70,6 +70,32 @@ This ensures that the SFH theory can be **independently tested, verified, and ex
 
 ---
 
+## 📚 Framework vs Reproducers
+
+This repository provides **two complementary ways** to run the SFH analysis:
+
+### 🔬 Research Framework
+- **`sfh_master_framework.py`**
+- The flexible research “workbench”
+- Runs partition calculations, Euler/pentagonal theorem checks, statistical analysis, and visualizations
+- Parameters are configurable (e.g. `max_n`, number of samples, visualization settings)
+- Use this when **exploring new experiments** or testing variations beyond the book
+
+### 📑 Reproducibility Scripts
+- **`reproduce_ch3_figures.py`** (and future `reproduce_ch4_figures.py`, `reproduce_ch5_figures.py`)
+- Each script is **hardcoded to reproduce the figures in a specific book chapter**
+- Saves outputs into `plots/chX/` with filenames like `Fig3_1_partition_growth.png`
+- Use this when you want to **verify the book’s published results exactly**
+- Ensures that readers, reviewers, and collaborators can independently confirm the accuracy of the code and the math
+
+In short:
+- **Framework = research tool**  
+- **Reproducers = verification tool**  
+
+Both approaches serve different needs, but together they ensure that the SFH results are **reproducible, verifiable, and extensible**.
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome!  
