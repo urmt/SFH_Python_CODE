@@ -1,101 +1,96 @@
 # SFH Python Framework
 
-**Research Code for *The Sentience-Field Hypothesis: Consciousness as the Fabric of Reality***  
+**Research Code for the Sentience-Field Hypothesis (SFH)**
 
-This repository contains the official Python framework that supports the scientific work in the book *The Sentience-Field Hypothesis (SFH)*.  
-It provides reproducible mathematical experiments, statistical analyses, and visualizations that correspond to the results, models, and figures presented in the manuscript.  
+This repository provides the official Python framework used in *The Sentience-Field Hypothesis: Consciousness as the Fabric of Reality* (SFH).  
+It contains the mathematical models, simulation workflows, and visualization tools that reproduce the figures and results presented in the book.  
 
-The framework is designed to meet academic reproducibility standards (e.g., for arXiv submission) while remaining accessible to developers and researchers who want to explore, extend, or critique the SFH model.
-
----
-
-## ✨ Overview
-
-The Sentience-Field Hypothesis proposes that consciousness emerges as a fundamental property of reality, encoded in quantized field structures.  
-This framework provides the computational backbone for that hypothesis, including:
-
-- **Partition mathematics** (Hardy–Ramanujan formula, Euler identities, pentagonal theorem checks).  
-- **Stochastic & statistical analyses** (Monte Carlo experiments, coherence–fertility optimization, forbidden configuration detection).  
-- **Advanced visualization** (plots of distributions, phase transitions, partition growth).  
-
-By running the included scripts, researchers can **reproduce the figures and tables** in the SFH book and extend the analysis with their own data.  
+The framework is designed to be **modular, reproducible, and extendable**, supporting both research exploration and community collaboration.
 
 ---
 
-## 🧮 Research Framework
+## ✨ Research Framework
 
-Run `setup_config.py` once to generate a structured research environment:  
+The repository is structured around a reproducible workflow:
 
-```
-config/               → JSON parameter sets for experiments  
-results/              → Numerical outputs from runs  
-plots/                → Generated visualizations (PNG, PDF)  
-logs/                 → Metadata logs (timestamps, seeds, environment info)  
-```
+- **`setup_config.py`**  
+  Initializes a full experiment environment with configuration files, result directories, and reproducibility settings.  
+  It creates JSON-based configs for parameters, Monte Carlo runs, statistical analysis, and visualization defaults.  
+  It also auto-generates helper modules (`parameters.py`, `random_seeds.py`, `environment.py`).  
 
-It also auto-generates reusable Python modules:  
+- **`sfh_master_framework.py`**  
+  Main orchestration script. Runs partition analysis, checks mathematical identities (Euler, pentagonal theorem), performs statistical analysis, and generates publication-ready plots.
 
-- `parameters.py` → imports JSON configs into experiments  
-- `random_seeds.py` → ensures reproducibility across runs  
-- `environment.py` → documents environment + dependencies  
+- **Supporting modules**  
+  - `partition_calc.py` → Hardy–Ramanujan partitions, Euler checks, forbidden configurations.  
+  - `statistical_analysis.py` → probability distributions, coherence–fertility balance metrics.  
+  - `advanced_visualization.py` → figures, histograms, growth curves, phase-transition plots.
 
-This structure guarantees that **all results are reproducible** and can be replicated by others.  
+This modular approach ensures experiments can be repeated with identical parameters and compared across different research runs.
 
 ---
 
 ## 🚀 Usage Guide
 
-### 1. Clone the repo
+### 1. Clone the repository
 ```bash
 git clone https://github.com/urmt/SFH_Python_CODE.git
 cd SFH_Python_CODE
 ```
 
-### 2. Setup experiment configs
+### 2. Initialize the framework
+Run once to set up configs, results folders, and reproducibility modules:
 ```bash
 python setup_config.py
 ```
 
-### 3. Run the framework
+### 3. Run the main analysis
 ```bash
 python sfh_master_framework.py
 ```
 
-### 4. Inspect results
-- Numerical results → `results/`  
-- Visualizations → `plots/`  
-- Run logs → `logs/`  
+This will:
+- Generate partition results and statistical analysis.
+- Check Euler and pentagonal theorem consistency.
+- Save plots and data into the `plots/` and `results/` folders.
+
+### 4. Customize experiments
+Edit the JSON configs in `config/` (e.g. `parameters.json`, `monte_carlo.json`) to change run parameters.  
+Re-run the framework to generate new results.
 
 ---
 
-## 📖 Reproducibility & Results
+## 📊 Reproducibility & Results
 
-The figures and analyses in the *SFH book* are generated directly from this framework.  
-Researchers can:  
+- **All results in the SFH book can be reproduced** with this framework.  
+- Plots are stored in `/plots` and numerical outputs in `/results`.  
+- Run logs are automatically created to ensure transparency of parameter choices.  
 
-- Modify `config/*.json` files to change experimental parameters.  
-- Rerun `sfh_master_framework.py` to reproduce existing figures or generate new ones.  
-- Extend the framework with additional statistical or visualization modules.  
+This ensures that the SFH theory can be **independently tested, verified, and extended** by the community.
 
 ---
 
 ## 🤝 Contributing
 
-This project is open for collaboration.  
+Contributions are welcome!  
+You may:
+- Submit pull requests with code improvements or additional modules.
+- Open issues to report bugs or suggest enhancements.
+- Request repository management access if you’d like to co-maintain the project.
 
-- **Commits & Pull Requests** are welcome.  
-- Researchers are encouraged to fork the repo, run new experiments, and submit improvements.  
-- If you wish to **co-manage the repository**, please open an issue or request access.  
-
-The goal is to make SFH an **open scientific platform** where critical discussion, verification, and refinement are possible.  
+The goal of this repository is to remain **open, collaborative, and community-driven**, reflecting the exploratory spirit of SFH.
 
 ---
 
-## 📚 Citation
+## 📖 Citation
 
-If you use this framework in academic work, please cite both the book and this repository:  
+If you use this repository in academic work, please cite both the book and the repo:
 
-- Traver, M.R. (2025). *The Sentience-Field Hypothesis: Consciousness as the Fabric of Reality.*  
-- SFH Python Framework (2025). GitHub repository: https://github.com/urmt/SFH_Python_CODE  
+**Book**  
+Traver, M.R. (2025). *The Sentience-Field Hypothesis: Consciousness as the Fabric of Reality.*
+
+**Code Repository**  
+Traver, M.R. (2025). *SFH Python Framework: Research Code for the Sentience-Field Hypothesis.* GitHub.  
+https://github.com/urmt/SFH_Python_CODE
 
 ---
