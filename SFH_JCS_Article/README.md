@@ -34,3 +34,51 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 # 3. Install the package and its dependencies
 pip install -r requirements.txt
 pip install -e .
+
+Quick usage examples
+1. Eco‑coherence (Florida Bay food web)
+python -m eco_coherence path/to/florida_bay_edges.csv --weight-col biomass
+Copy
+Or from Python:
+
+from eco_coherence.core import compute_ecocoherence
+C = compute_ecocoherence('data/florida_bay_edges.csv', weight_col='biomass')
+print(f'Eco‑coherence = {C:.3f}')
+Copy
+2. Qualic‑field MCMC (γ‑band power from PhysioNet)
+from mcmc_qualic.sampler import run_mcmc
+samples = run_mcmc(q_observed, n_iter=20000, burn_in=5000, step_sd=0.2)
+samples.to_csv('results/qualic_posterior.csv')
+Copy
+3. Cosmological tuning
+python -m cosmo_tuning data/planck_observables.csv --lambda-reg 0.01 --lr 1e-3
+Copy
+4. Neural fractal dimension
+python -m neural_fractal data/subj01.edf --kmax 12 --out results/subj01_fractal.csv
+Copy
+Documentation & Reproducibility
+Jupyter notebooks (*/demo.ipynb) illustrate end‑to‑end analyses with publicly available data.
+
+Zenodo archive – every tagged release on GitHub is automatically minted with a DOI (e.g., 10.5281/zenodo.XXXXXXX). Cite the software as:
+
+Traver, M. R. (2025). Sentient‑Field Tools – Python implementations of the qualic‑field models (Version 0.1.0) [Software]. Zenodo. https://doi.org/10.xxxx/zenodo.xxxxxx
+
+OSF pre‑registration – the full analysis plan (mixed‑effects model, power calculation, etc.) is registered on OSF (doi:10.17605/OSF.IO/XYZ123). The repository URL is added to the OSF record for full transparency.
+
+Contributing
+Fork the repository.
+Create a feature branch (git checkout -b my‑feature).
+Add/modify code and tests.
+Run the full test suite: pytest -v.
+Submit a Pull Request.
+Please adhere to the NumPy docstring style and keep the public API stable (functions listed in the table above).
+
+License
+The code is released under the MIT License.
+Data files that are part of the demos are subject to the licenses of the original providers (PhysioNet, EcoBase, Planck Collaboration, BCI Competition IV).
+
+Contact
+For bugs, feature requests, or questions about the scientific models, open an issue on GitHub or email the maintainer at m.traver@proton.me.
+
+Happy coding! 🚀
+
