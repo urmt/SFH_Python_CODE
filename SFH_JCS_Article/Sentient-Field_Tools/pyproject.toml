@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=70.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentient-field-tools"
+version = "0.1.0"
+description = "Open‑source implementations of the quantitative models from the Sentient‑Field Hypothesis."
+readme = "README.md"
+authors = [
+    {name = "Mark Rowe Traver", email = "m.traver@proton.me"},
+]
+license = {text = "MIT"}
+keywords = ["qualic", "eco-coherence", "cosmology", "fractal-dimension", "MCMC", "SFH"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+]
+
+# Minimum Python version
+requires-python = ">=3.10"
+
+dependencies = [
+    "numpy>=1.26.0",
+    "scipy>=1.13.0",
+    "pandas>=2.2.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    "networkx>=3.3",
+    "mne>=1.7.0",
+    "nolds>=0.5.2",
+    "arviz>=0.18.0",
+    # optional torch – users can install it manually if they need the gradient‑flow version
+]
+
+[project.optional-dependencies]
+torch = ["torch>=2.3.0"]
+
+[project.urls]
+Homepage = "https://github.com/your-username/sentient-field-tools"
+Documentation = "https://github.com/your-username/sentient-field-tools#readme"
+Repository = "https://github.com/your-username/sentient-field-tools.git"
+Issues = "https://github.com/your-username/sentient-field-tools/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+# Include the demo notebooks and any small example data files
+sentient_field_tools = ["*/demo.ipynb", "*/data/*"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
