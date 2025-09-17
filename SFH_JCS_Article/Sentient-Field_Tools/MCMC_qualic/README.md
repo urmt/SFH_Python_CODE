@@ -85,4 +85,4 @@ Built with support from the open-source community, including NumPy, SciPy, and A
 Special thanks to reviewers and collaborators advancing SFH research.
 
 Contact
-For questions or collaboration, contact Mark Rowe Traver at mark.traver@aurora.edu.
+For questions or collaboration, contact Mark R. Traver at thesfh@proton.me
