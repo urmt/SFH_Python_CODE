@@ -67,9 +67,9 @@ License
 This project is licensed under the MIT License - see the LICENSE file for details.
 Acknowledgments
 
-Inspired by The Sentience-Field Hypothesis by Mark Rowe Traver (2025).
+Inspired by The Sentience-Field Hypothesis by M.R. Traver (2025).
 Built with support from the open-source community, including MNE, NumPy, and nolds.
 Thanks to collaborators advancing SFH's neuroscience research.
 
 Contact
-For questions or collaboration, contact Mark Rowe Traver at mark.traver@aurora.edu.
+For questions or collaboration, contact Mark Rowe Traver at thesfh@proton.me
