@@ -80,7 +80,7 @@ License
 This project is licensed under the MIT License - see the LICENSE file for details.
 Acknowledgments
 
-Inspired by the theoretical work in The Sentience-Field Hypothesis by Mark Rowe Traver (2025).
+Inspired by the theoretical work in The Sentience-Field Hypothesis by M.R. Traver (2025).
 Built with support from the open-source community, including NumPy, SciPy, and ArviZ.
 Special thanks to reviewers and collaborators advancing SFH research.
 
