@@ -1,10 +1,11 @@
 import numpy as np
 
+
 def forward_model(theta):
     """
-    Very simple linear surrogate for the full SFH forward model.
-    In a real implementation this would call a physics‑based simulator;
-    here we use a linear mapping that is sufficient for the demo.
+    Linear surrogate for the SFH cosmological forward model, approximating qualic
+    field dynamics (Protocol 3). In a full implementation, this would incorporate
+    non-linear physics and Hardy-Ramanujan partitions (Eq. 2).
 
     Parameters
     ----------
@@ -16,9 +17,9 @@ def forward_model(theta):
     ndarray, shape (n_obs,)
         Predicted cosmological observables.
     """
-    # A is a fixed matrix that maps parameters to observables.
-    # We create a pseudo‑random but reproducible matrix.
     rng = np.random.default_rng(42)
-    n_obs = len(theta)  # for the demo we keep dimensions equal
-    A = rng.normal(size=(n_obs, len(theta)))
-    return A @ theta
+    n_obs = len(theta)  # For demo, match input dimension
+    A = rng.normal(size=(n_obs, len(theta)))  # Pseudo-random mapping
+    # Apply SFH-inspired non-linearity (simplified partition effect)
+    scaled_theta = theta * np.exp(-np.sum(theta**2) / n_params)  # Dampen large deviations
+    return A @ scaled_theta
