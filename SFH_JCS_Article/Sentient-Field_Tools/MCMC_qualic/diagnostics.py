@@ -1,33 +1,41 @@
-import arviz as az
 import matplotlib.pyplot as plt
+import arviz as az
 
-def plot_trace(df):
+
+def plot_trace(result):
     """
-    Plot trace and posterior histograms using ArviZ.
+    Plot trace and posterior histograms using ArviZ from MCMC results.
 
     Parameters
     ----------
-    df : pandas.DataFrame
-        Output of ``run_mcmc`` (columns ``mu`` and ``sigma_q``).
+    result : dict
+        Output of `run_mcmc` with 'samples' (pd.MultiIndex DataFrame) key.
     """
-    data = az.convert_to_inference_data(df)
+    if 'samples' not in result:
+        raise ValueError("Result must contain 'samples' key.")
+    data = az.convert_to_inference_data(result['samples'])
     az.plot_trace(data)
     plt.show()
 
-def gelman_rubin(chains):
+
+def gelman_rubin(result):
     """
-    Compute the Gelman‑Rubin R̂ statistic for a list of chains.
+    Compute the Gelman-Rubin R̂ statistic from MCMC diagnostics.
 
     Parameters
     ----------
-    chains : list of pandas.DataFrame
-        Each element is the posterior from an independent chain.
+    result : dict
+        Output of `run_mcmc` with 'diagnostics' key containing R-hat values.
 
     Returns
     -------
     dict
         Mapping from parameter name to R̂.
     """
-    combined = az.concat(chains, dim="chain")
-    rhat = az.rhat(combined)
-    return {var: float(val) for var, val in rhat.items()}
+    if 'diagnostics' not in result:
+        raise ValueError("Result must contain 'diagnostics' key.")
+    diagnostics = result['diagnostics']
+    return {
+        "R_hat_mu": diagnostics["R_hat_mu"],
+        "R_hat_sigma": diagnostics["R_hat_sigma"]
+    }
